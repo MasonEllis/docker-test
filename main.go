@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"log"
 	"math/rand"
 	"net/http"
 )
@@ -15,6 +16,7 @@ func main() {
 
 	router.GET("/randomNumber", func(context *gin.Context) {
 		n := rand.Int()
+		log.Printf("The random number is %d\n", n)
 		context.JSON(http.StatusOK, n)
 	})
 
